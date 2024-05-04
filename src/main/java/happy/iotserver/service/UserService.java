@@ -19,20 +19,17 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    // 회원가입, 중복 검사 후 user 저장
     public void joinUser(User user) {
         validateDuplicateUser(user);
         userRepository.save(user);
         log.info("id: {}, join", user.getUserId());
     }
 
-    // userId로 User 객체를 찾고 비밀번호 대조 후 User 반환, 없으면 null 반환
     public User userLogin(Long userId, String password) {
         return userRepository.findByLoginId(userId)
                 .filter(u -> u.getPassword().equals(password)).orElse(null);
     }
 
-    // 유저 아이디로 회원 정보를 모두 찾아 DTO 에 담기
     public UserModifyDto userModify(Long userId) {
         User findUser = userRepository.findOneByUserId(userId);
         Address userAddress = findUser.getAddress();
@@ -51,7 +48,6 @@ public class UserService {
         log.info("id: {}, delete", userId);
     }
 
-    // 비밀번호 변경
     public void updateUserPassword(Long userId, String password) {
         User findUser = userRepository.findOneByUserId(userId);
         findUser.updatePassword(password);
@@ -59,7 +55,6 @@ public class UserService {
         log.info("id: {}, password update", findUser.getUserId());
     }
 
-    // 주소 업데이트
     public void updateUserAddress(Long userId, Address address) {
         User findUser = userRepository.findOneByUserId(userId);
         findUser.updateAddress(address);
@@ -67,7 +62,6 @@ public class UserService {
         log.info("id: {}, address update", findUser.getUserId());
     }
 
-    // 아이디 중복 검사
     private void validateDuplicateUser(User user) {
         List<User> findUsers = userRepository.findUsersById(user.getUserId());
         if (!findUsers.isEmpty()) {

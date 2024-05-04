@@ -35,18 +35,15 @@ public class UserRepository {
         return em.find(User.class, userId);
     }
 
-    // 저장된 모든 유저 찾기
     public List<User> findAll() {
         return em.createQuery("from User u", User.class).getResultList();
     }
 
-    // 아이디로 모든 레코드에서 존재하는지 검색함
     public List<User> findUsersById(Long userId) {
         return em.createQuery("select u from User u where u.id = :id", User.class)
                 .setParameter("id", userId).getResultList();
     }
 
-    // null 값을 제어하기 위해서 Optional 로 반환, findUsersById 와 같은 역할
     public Optional<User> findByLoginId(Long userId) {
         return findAll().stream().filter(u -> u.getUserId().equals(userId)).findFirst();
     }
