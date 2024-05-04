@@ -1,6 +1,5 @@
-package happy.iotserver.domain.user;
+package happy.iotserver.user.domain;
 
-import happy.iotserver.domain.Address;
 import jakarta.persistence.*;
 import lombok.Getter;
 

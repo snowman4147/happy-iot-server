@@ -1,4 +1,4 @@
-package happy.iotserver.domain;
+package happy.iotserver.user.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

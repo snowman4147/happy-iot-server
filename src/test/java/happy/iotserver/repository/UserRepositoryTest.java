@@ -1,6 +1,7 @@
 package happy.iotserver.repository;
 
-import happy.iotserver.domain.user.User;
+import happy.iotserver.user.domain.User;
+import happy.iotserver.user.domain.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

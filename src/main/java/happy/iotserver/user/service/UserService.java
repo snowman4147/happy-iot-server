@@ -1,9 +1,9 @@
-package happy.iotserver.service;
+package happy.iotserver.user.service;
 
-import happy.iotserver.domain.*;
-import happy.iotserver.domain.user.User;
-import happy.iotserver.domain.user.UserModifyDto;
-import happy.iotserver.repository.UserRepository;
+import happy.iotserver.user.domain.Address;
+import happy.iotserver.user.domain.User;
+import happy.iotserver.user.domain.repository.UserRepository;
+import happy.iotserver.user.dto.UserModifyDto;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

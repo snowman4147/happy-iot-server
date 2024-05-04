@@ -1,4 +1,4 @@
-package happy.iotserver.domain.user;
+package happy.iotserver.user.dto;
 
 import lombok.Data;
 

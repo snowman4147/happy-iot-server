@@ -1,6 +1,6 @@
-package happy.iotserver.repository;
+package happy.iotserver.user.domain.repository;
 
-import happy.iotserver.domain.user.User;
+import happy.iotserver.user.domain.User;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.extern.slf4j.Slf4j;

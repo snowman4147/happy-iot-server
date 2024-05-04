@@ -1,8 +1,9 @@
-package happy.iotserver.controller;
+package happy.iotserver.user.api;
 
-import happy.iotserver.domain.*;
-import happy.iotserver.domain.user.*;
-import happy.iotserver.service.UserService;
+import happy.iotserver.user.domain.Address;
+import happy.iotserver.user.domain.User;
+import happy.iotserver.user.dto.*;
+import happy.iotserver.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
